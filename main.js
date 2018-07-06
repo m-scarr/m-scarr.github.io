@@ -10,24 +10,38 @@ $(document).on("click", function () {
 
 $("#nav-about").on("click", function (event) {
     event.preventDefault()
+    event.stopPropagation()
     if (screen_width < width_switch) {
-        event.stopPropagation()
         nav_state = "closing"
+        $('body,html').animate({
+            scrollTop: $("#about").offset().top - 16
+        }, 500);
+    } else {
+        $('body,html').animate({
+            scrollTop: $("#about").offset().top - 85
+        }, 500);
     }
-    $('body,html').animate({
-        scrollTop: $("#about").offset().top - 72
-    }, 500);
+})
+
+$(".github-icon").on("click", function (event) {
+    event.preventDefault()
+    window.open($(this).attr("data"))
 })
 
 $("#nav-skills").on("click", function (event) {
     event.preventDefault()
+
     if (screen_width < width_switch) {
         event.stopPropagation()
         nav_state = "closing"
+        $('body,html').animate({
+            scrollTop: $("#skills").offset().top - 16
+        }, 500);
+    } else {
+        $('body,html').animate({
+            scrollTop: $("#skills").offset().top - 48
+        }, 500);
     }
-    $('body,html').animate({
-        scrollTop: $("#skills").offset().top - 72
-    }, 500);
 })
 
 $("#nav-work").on("click", function (event) {
@@ -35,10 +49,14 @@ $("#nav-work").on("click", function (event) {
     if (screen_width < width_switch) {
         event.stopPropagation()
         nav_state = "closing"
+        $('body,html').animate({
+            scrollTop: $("#work").offset().top - 16
+        }, 500);
+    } else {
+        $('body,html').animate({
+            scrollTop: $("#work").offset().top - 48
+        }, 500);
     }
-    $('body,html').animate({
-        scrollTop: $("#work").offset().top - 72
-    }, 500);
 })
 
 $("#nav-contact").on("click", function (event) {
@@ -46,10 +64,14 @@ $("#nav-contact").on("click", function (event) {
     if (screen_width < width_switch) {
         event.stopPropagation()
         nav_state = "closing"
+        $('body,html').animate({
+            scrollTop: $("#contact").offset().top - 16
+        }, 500);
+    } else {
+        $('body,html').animate({
+            scrollTop: $("#contact").offset().top - 48
+        }, 500);
     }
-    $('body,html').animate({
-        scrollTop: $("#contact").offset().top - 72
-    }, 500);
 })
 
 $(".nav").on("click", function (event) {
@@ -92,7 +114,7 @@ $("#hardware").on("click", function (event) {
 
 var screen_width = $(window).width()
 var nav_state = "closed"
-var width_switch = 600
+var width_switch = 567
 
 // $("#about-text").css("line-height", Math.floor((container_height - 180) / (about_height / line_height)) + "px")
 
@@ -121,34 +143,51 @@ function step() {
         }
     }
     if (screen_width >= width_switch) {
-        console.log("!")
-        $("#menu-img").hide()
-        $(".nav-item").show()
-        $(".nav").css("display", "flex")
-        $(".nav").css("width", "100%")
-        $(".nav").css("z-index", "9")
-        $(".nav").css("right", "0")
-        $(".nav").css("left", "0")
-        $(".nav").css("top", "0")
-        $(".nav").css("justify-content", "center")
-        $(".nav").css("padding-bottom", "8px")
-        $(".nav-item").css("width", "20%")
-        $(".nav").css("height", "auto")
 
-        $("#nytscraper").css("height", parseInt($("#jquerygames").css("height"), 10) + "px")
-        $("#trollstoll").css("height", parseInt($("#twohundredjobfound").css("height"), 10) + "px")
+        $("#menu-img").hide()
+        $(".mtitle").hide()
+
+        $(".nav-container").css("position", "fixed")
+        $(".nav-container").css("top", "0")
+        $(".nav-container").css("right", "0")
+        $(".nav-container").css("left", "0")
+        $(".nav-container").css("z-index", "9")
+        $(".nav-container").css("width", "calc(100% - 2px)")
+        $(".nav-container").css("border-color", "0")
+        $(".nav-container").css("background-color", "rgba(255,255,255,.9)")
+
+        $(".nav").css("z-index", "9")
+        $(".nav").css("position", "relative")
+        $(".nav").css("width", "100%")
+        $(".nav").css("border-radius", "4px")
+        $(".nav").css("border-width", "1px")
+        $(".nav").css("border-style", "solid")
+        $(".nav").css("border-color", "lightgray")
+        $(".nav").css("display", "flex")
+        $(".nav").css("justify-content", "center")
+        $(".nav").css("top", "0")
+        $(".nav").css("left", "0")
+
+        $(".nav-item").css("font-weight", "bold")
+        $(".nav-item").css("font-size", "2em")
+        $(".nav-item").css("width", "20%")
+        $(".nav-item").show()
+        if ($(window).scrollTop() > 0) {
+            $(".title").hide()
+        } else {
+            $(".title").show()
+        }
     } else {
-        $("#nytscraper").css("height", "auto")
-        $("#trollstoll").css("height", "auto")
+        $(".title").hide()
         if (nav_state == "closed") {
             $(".nav-item").hide()
-            $("#menu-img").show()
             $(".nav").css("display", "block")
             $(".nav").css("width", "32px")
             $(".nav").css("height", "32px")
             $(".nav").css("padding", "0px")
             $(".nav").css("top", "4px")
             $(".nav").css("left", "4px")
+            $(".nav").css("position", "fixed")
             $(".nav-item").css("width", "auto")
             $("#menu-img").show()
         }
@@ -158,5 +197,6 @@ function step() {
             $(".nav").css("height", "272px")
             $(".nav-item").show()
         }
+        $(".mtitle").show()
     }
 }

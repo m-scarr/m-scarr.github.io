@@ -20,37 +20,47 @@ a:active {
 }
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 567px) {
     body {
-        font-size: 1.25em;
+        font-size: 1em;
     }
     .content {
-        /* position: absolute; */
         margin: auto;
         width:80%;
-        min-width: 600px;
+        min-width: 567px;
         padding-top: 46px;
+    }
+
+    .nav-container {
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 9;
+        position: fixed;
+        width: calc(100% - 2px);
+        border-color: lightgray;
+        background-color: rgba(255,255,255,.9);
     }
     .nav {
         z-index: 9;
         border-radius:4px;
-        position: fixed;
-        right: 0;
-        left: 0;
-        top: 0;
         border-width: 1px;
         border-style: solid;
         border-color: lightgray;
-        background-color: rgba(255,255,255,.9);
         display: flex;
         justify-content: center;
     }
     .nav-item {
-        /* height: 64px; */
         font-size: 2em;
         font-weight: bold;
         width:20%
     }
+
+    .title {
+        font-size: 2.5em;
+        width: 100%;
+    }
+
     .skill {
         margin: 16px;
     }
@@ -74,37 +84,23 @@ a:active {
         
     }
 
-     #about {
+    #about {
         background-color: white;
         color:black;
+        margin-top: 32px;
     } 
 
-   #work {
+    #work {
         background-color: white;
         color:black;
     }
 
-    .row {
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-    }
 
     ul {
         list-style-type: none;
         text-align: center;
     }
 
-    /* #about {
-        padding-top: 72px;
-        padding-bottom: 72px;
-    }
-
-    #skills {
-        padding-top: 48px;
-        padding-bottom: 96px;
-    }
-    */
     #contact {
         min-height: auto;
         height: auto;
@@ -115,17 +111,17 @@ a:active {
         padding-left: 4px;
         font-size: 1.25em;
         margin-top: 36px;
-        border-radius:48px;
+        border-radius: 48px;
         border-style: solid;
         border-color: white;
-        background-color:rgba(0,0,0,.05);
+        background-color: rgba(0,0,0,.05);
         border-width: 1px;
         padding-bottom: 36px;
-        padding-top:8px;
+        padding-top: 8px;
         width: calc(50% - 72px);
     }
     .work-item-image {
-        margin:auto;
+        margin: auto;
         /* border-radius:48px; */
         width: calc(100% - 48px);
         height: auto;
@@ -154,7 +150,7 @@ a:active {
         border-radius: 8px;
         border-width: 1px;
         border-style: solid;
-        font-size: .625em;
+        font-size: .85em;
     }
 
     #skills {
@@ -165,8 +161,23 @@ a:active {
         color: white;
         background-color: darkgray;
     }
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .button-row {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 567px) {
+    .title {
+        font-size: 2.5em;
+        width:100%;
+    }
+
     .nav {
         border-radius:4px;
         position: fixed;
@@ -186,15 +197,14 @@ a:active {
         font-weight: bold;
     }
     .skill {
-        margin: 16px;
+        margin: auto;
     }
     .page {
         color: white;
         background-color: darkgray;
-        border-radius:18px;
-        margin: 8px;
-        padding-right: 12px;
-        padding-left: 12px;
+        border-radius:16px;
+        margin: 16px;
+        padding: 16px;
         /* border-width: 1px;
         border-style: solid;
         border-color: lightgray; */
@@ -203,13 +213,11 @@ a:active {
     #about {
         background-color:white;
         color: black;
-        padding-bottom: 18px;
     }
 
     #work {
         background-color:white;
         color: black;
-        padding-bottom: 18px;
     }
 
     ul {
@@ -218,20 +226,17 @@ a:active {
     }
 
     .work-item {
-        padding-right: 4px;
-        padding-left: 4px;
+        padding: 8px;
+        margin: 8px;
         font-size: 1.3em;
-        margin-top: 36px;
-        border-radius:18px;
+        border-radius:16px;
         border-style: solid;
         border-color: white;
         background-color:rgba(0,0,0,.05);
         border-width: 1px;
-        padding-bottom: 36px;
-        padding-top:8px;
     }
     .work-item-image {
-        border-radius:18px;
+        border-radius:16px;
         width: calc(100% - 1px);
         height: auto;
         border-style: solid;
@@ -264,9 +269,16 @@ a:active {
         color: white;
         background-color: darkgray;
     }
+
     #contact {
         color: white;
         background-color: darkgray;
+    }
+
+    .button-row {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
     }
 }
 
@@ -276,4 +288,17 @@ a:active {
 
 #hardware {
     display: none;
+}
+
+.work-item-link {
+    margin: auto;
+}
+
+.work-item-github {
+    margin: auto;
+    margin-top: 16px;
+}
+
+.mtitle {
+    font-size: 2.5em;
 }
