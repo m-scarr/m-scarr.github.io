@@ -175,9 +175,9 @@ function step() {
         $(".nav-item").css("width", "20%")
         $(".nav-item").show()
         if ($(window).scrollTop() > 0) {
-            $(".title").hide()
+            $(".title").fadeOut()
         } else {
-            $(".title").show()
+            $(".title").fadeIn()
         }
     } else {
         $(".title").hide()
