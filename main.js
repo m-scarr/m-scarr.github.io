@@ -143,7 +143,7 @@ function step() {
         }
     }
     if (screen_width >= width_switch) {
-
+        nav_state = "closed"
         $("#menu-img").hide()
         $(".mtitle").hide()
 
@@ -155,6 +155,7 @@ function step() {
         $(".nav-container").css("width", "calc(100% - 2px)")
         $(".nav-container").css("border-color", "0")
         $(".nav-container").css("background-color", "rgba(255,255,255,.9)")
+        $(".nav-container").css("height", "auto")
 
         $(".nav").css("z-index", "9")
         $(".nav").css("position", "relative")
@@ -167,6 +168,7 @@ function step() {
         $(".nav").css("justify-content", "center")
         $(".nav").css("top", "0")
         $(".nav").css("left", "0")
+        $(".nav").css("height", "auto")
 
         $(".nav-item").css("font-weight", "bold")
         $(".nav-item").css("font-size", "2em")
