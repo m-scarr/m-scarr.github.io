@@ -14,11 +14,11 @@ $("#nav-about").on("click", function (event) {
     if (screen_width < width_switch) {
         nav_state = "closing"
         $('body,html').animate({
-            scrollTop: $("#about").offset().top - 16
+            scrollTop: 0
         }, 500);
     } else {
         $('body,html').animate({
-            scrollTop: $("#about").offset().top - 85
+            scrollTop: 0
         }, 500);
     }
 })
@@ -35,11 +35,11 @@ $("#nav-skills").on("click", function (event) {
         event.stopPropagation()
         nav_state = "closing"
         $('body,html').animate({
-            scrollTop: $("#skills").offset().top - 16
+            scrollTop: $("#skills").offset().top
         }, 500);
     } else {
         $('body,html').animate({
-            scrollTop: $("#skills").offset().top - 48
+            scrollTop: $("#skills").offset().top
         }, 500);
     }
 })
@@ -50,11 +50,11 @@ $("#nav-work").on("click", function (event) {
         event.stopPropagation()
         nav_state = "closing"
         $('body,html').animate({
-            scrollTop: $("#work").offset().top - 16
+            scrollTop: $("#work").offset().top
         }, 500);
     } else {
         $('body,html').animate({
-            scrollTop: $("#work").offset().top - 48
+            scrollTop: $("#work").offset().top
         }, 500);
     }
 })
@@ -65,11 +65,11 @@ $("#nav-contact").on("click", function (event) {
         event.stopPropagation()
         nav_state = "closing"
         $('body,html').animate({
-            scrollTop: $("#contact").offset().top - 16
+            scrollTop: $("#contact").offset().top
         }, 500);
     } else {
         $('body,html').animate({
-            scrollTop: $("#contact").offset().top - 48
+            scrollTop: $("#contact").offset().top
         }, 500);
     }
 })
@@ -174,13 +174,38 @@ function step() {
         $(".nav-item").css("font-size", "2em")
         $(".nav-item").css("width", "20%")
         $(".nav-item").show()
-        if ($(window).scrollTop() > 0) {
-            $(".title").fadeOut()
-        } else {
-            $(".title").fadeIn()
+        $(".title").show()
+
+        console.log($(window).scrollTop() )
+        if ($(window).scrollTop() <= 3) {
+            $(".title").css("height", "80px")
+            $(".title").css("opacity", "1")
         }
+         else if ($(window).scrollTop() < 80) {
+            var test = (80 - $(window).scrollTop())
+            $(".title").css("height", test + "px")
+            $(".title").css("opacity", (test - 50) / 50)
+        } else if ($(window).scrollTop() >= 80) {
+            $(".title").css("height", "0px")
+            $(".title").css("opacity", "0")
+        }
+        // } else {
+        //     $(".title").fadeIn()
+        // }
     } else {
         $(".title").hide()
+        if ($(window).scrollTop() <= 3) {
+            $(".mtitle").css("height", "80px")
+            $(".mtitle").css("opacity", "1")
+        }
+         else if ($(window).scrollTop() < 80) {
+            var test = (80 - $(window).scrollTop())
+            $(".mtitle").css("height", test + "px")
+            $(".mtitle").css("opacity", (test - 50) / 50)
+        } else if ($(window).scrollTop() >= 80) {
+            $(".mtitle").css("height", "0px")
+            $(".mtitle").css("opacity", "0")
+        }
         if (nav_state == "closed") {
             $(".nav-item").hide()
             $(".nav").css("display", "block")
