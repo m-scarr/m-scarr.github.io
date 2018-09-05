@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=VT323);
 body {
-    font-family: 'VT323', monospace;
+    /* font-family: 'VT323', monospace; */
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     text-align: center;
     font-size: 1em;
     line-height: 2;
