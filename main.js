@@ -39,6 +39,14 @@ $("#trollstoll-ghlink").on("click", function (event) {
         alert('The demo of this project is attempting to open in another tab, but may have been blocked by pop-ups.');
     }
 })
+$("#nytscraper-ghlink").on("click", function (event) {
+    var win = window.open('https://github.com/m-scarr/NYTscraper');
+    if (win) {
+        win.focus();
+    } else {
+        alert('The demo of this project is attempting to open in another tab, but may have been blocked by pop-ups.');
+    }
+})
 
 $("#nav-about").on("click", function (event) {
     event.preventDefault()
