@@ -23,6 +23,7 @@ $("#nav-about").on("click", function (event) {
     }
 })
 $("#twohundredjobfound-link").on("click", function (event) {
+    console.log("!!")
     var win = window.open('http://twohundredjobfound.herokuapp.com/');
     if (win) {
         win.focus();
