@@ -22,6 +22,14 @@ $("#nav-about").on("click", function (event) {
         }, 500);
     }
 })
+$("#twohundredjobfound-link").on("click", function (event) {
+    var win = window.open('http://twohundredjobfound.herokuapp.com/');
+    if (win) {
+        win.focus();
+    } else {
+        alert('The demo of this project is attempting to open in another tab, but may have been blocked by pop-ups.');
+    }
+})
 
 $(".github-icon").on("click", function (event) {
     event.preventDefault()
