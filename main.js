@@ -73,11 +73,11 @@ $("#nav-projects").on("click", function (event) {
         event.stopPropagation()
         nav_state = "closing"
         $('body,html').animate({
-            scrollTop: $("#work").offset().top
+            scrollTop: $("#projects").offset().top
         }, 500);
     } else {
         $('body,html').animate({
-            scrollTop: $("#work").offset().top
+            scrollTop: $("#projects").offset().top
         }, 500);
     }
 })
