@@ -131,10 +131,10 @@ function step() {
     if (nav_state == "opening") {
         $("#menu-img").hide()
         if (parseInt($(".nav").css("width"), 10) < (screen_width - 16)) {
-            $(".nav").css("width", (parseInt($(".nav").css("width"), 10) + 8) + "px")
+            $(".nav").css("width", (parseInt($(".nav").css("width"), 10) + 32) + "px")
         } else if (parseInt($(".nav").css("height"), 10) < 272) {
             $(".nav").css("width", (screen_width - 16) + "px")
-            $(".nav").css("height", (parseInt($(".nav").css("height"), 10) + 8) + "px")
+            $(".nav").css("height", (parseInt($(".nav").css("height"), 10) + 32) + "px")
         } else {
             nav_state = "open"
         }
@@ -142,10 +142,10 @@ function step() {
     if (nav_state == "closing") {
         $(".nav-item").hide()
         if (parseInt($(".nav").css("height"), 10) > 32) {
-            $(".nav").css("height", (parseInt($(".nav").css("height"), 10) - 8) + "px")
+            $(".nav").css("height", (parseInt($(".nav").css("height"), 10) - 32) + "px")
         } else if (parseInt($(".nav").css("width"), 10) > 32) {
             $(".nav").css("height", "32px")
-            $(".nav").css("width", (parseInt($(".nav").css("width"), 10) - 8) + "px")
+            $(".nav").css("width", (parseInt($(".nav").css("width"), 10) - 32) + "px")
         } else {
             nav_state = "closed"
         }
