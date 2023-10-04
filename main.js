@@ -1,4 +1,4 @@
-setInterval(step, 1);
+setInterval(step, 16);
 
 $(document).on("click", function () {
     if (screen_width < width_switch) {
@@ -184,7 +184,6 @@ function step() {
         $(".nav-item").show()
         $(".title").show()
 
-        console.log($(window).scrollTop() )
         if ($(window).scrollTop() <= 3) {
             $(".title").css("height", "80px")
             $(".title").css("opacity", "1")
