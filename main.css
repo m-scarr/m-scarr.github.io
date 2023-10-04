@@ -92,7 +92,7 @@ a:active {
     } 
 
     #projects {
-        background-color: white;
+        background-color: red;
         color:black;
     }
 
@@ -173,11 +173,6 @@ a:active {
 }
 @media only screen and (max-width: 567px) {
 
-    /* .button-row {
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-    } */
     .title {
         font-size: 2.5em;
         width:100%;
@@ -220,7 +215,7 @@ a:active {
         color: black;
     }
 
-    #work {
+    #projects {
         background-color:white;
         color: black;
     }
