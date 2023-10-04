@@ -7,46 +7,34 @@ $(document).on("click", function () {
         }
     }
 })
-$("#jquerygames-link").on("click", function (event) {
-    var win = window.open('http://jquerygames.herokuapp.com/');
+
+$("#gmi-ghlink").on("click", function (event) {
+    var win = window.open('https://github.com/m-scarr/gmi');
     if (win) {
         win.focus();
     } else {
         alert('The demo of this project is attempting to open in another tab, but may have been blocked by pop-ups.');
     }
 })
-$("#jquerygames-ghlink").on("click", function (event) {
-    var win = window.open('https://github.com/m-scarr/jQueryGames');
+
+$("#bingobaby-ghlink").on("click", function (event) {
+    var win = window.open('https://github.com/m-scarr/bingobaby');
     if (win) {
         win.focus();
     } else {
         alert('The demo of this project is attempting to open in another tab, but may have been blocked by pop-ups.');
     }
 })
-$("#trollstoll-link").on("click", function (event) {
-    var win = window.open('http://trollstoll.herokuapp.com/');
+
+$("#photo-sharing-app-ghlink").on("click", function (event) {
+    var win = window.open('https://github.com/m-scarr/photo-app');
     if (win) {
         win.focus();
     } else {
         alert('The demo of this project is attempting to open in another tab, but may have been blocked by pop-ups.');
     }
 })
-$("#trollstoll-ghlink").on("click", function (event) {
-    var win = window.open('https://github.com/m-scarr/TrollsToll');
-    if (win) {
-        win.focus();
-    } else {
-        alert('The demo of this project is attempting to open in another tab, but may have been blocked by pop-ups.');
-    }
-})
-$("#nytscraper-ghlink").on("click", function (event) {
-    var win = window.open('https://github.com/m-scarr/NYTscraper');
-    if (win) {
-        win.focus();
-    } else {
-        alert('The demo of this project is attempting to open in another tab, but may have been blocked by pop-ups.');
-    }
-})
+
 
 $("#nav-about").on("click", function (event) {
     event.preventDefault()
@@ -61,27 +49,6 @@ $("#nav-about").on("click", function (event) {
             scrollTop: 0
         }, 500);
     }
-})
-$("#twohundredjobfound-link").on("click", function (event) {
-    var win = window.open('http://twohundredjobfound.herokuapp.com/');
-    if (win) {
-        win.focus();
-    } else {
-        alert('The demo of this project is attempting to open in another tab, but may have been blocked by pop-ups.');
-    }
-})
-$("#twohundredjobfound-ghlink").on("click", function (event) {
-    var win = window.open('https://github.com/m-scarr/twohundredjobfound');
-    if (win) {
-        win.focus();
-    } else {
-        alert('The demo of this project is attempting to open in another tab, but may have been blocked by pop-ups.');
-    }
-})
-
-$(".github-icon").on("click", function (event) {
-    event.preventDefault()
-    window.open($(this).attr("data"))
 })
 
 $("#nav-skills").on("click", function (event) {
@@ -100,7 +67,7 @@ $("#nav-skills").on("click", function (event) {
     }
 })
 
-$("#nav-work").on("click", function (event) {
+$("#nav-projects").on("click", function (event) {
     event.preventDefault()
     if (screen_width < width_switch) {
         event.stopPropagation()
@@ -155,24 +122,9 @@ $("#email_icon").on("click", function (event) {
     window.open('mailto:michael.m.scarr@gmail.com')
 })
 
-
-$("#hardware-button").on("click", function (event) {
-    event.preventDefault()
-    $("#hardware-button").fadeOut(1000)
-    $("#hardware").fadeIn(1000)
-})
-
-$("#hardware").on("click", function (event) {
-    event.preventDefault()
-    $("#hardware").fadeOut(1000)
-    $("#hardware-button").fadeIn(1000)
-})
-
 var screen_width = $(window).width()
 var nav_state = "closed"
 var width_switch = 567
-
-// $("#about-text").css("line-height", Math.floor((container_height - 180) / (about_height / line_height)) + "px")
 
 function step() {
     screen_width = $(window).width()
